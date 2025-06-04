@@ -1,0 +1,157 @@
+/* src/Paginas/Home/Home.module.css */
+
+/* Estilos para o container principal da página Home */
+.homeContainer {
+  /* Layout e Posicionamento */
+  position: relative; /* FUNDAMENTAL: Define o contexto de posicionamento para filhos absolutos (como o vídeo) */
+  height: 100vh;      /* Ocupa 100% da altura da viewport (tela visível) */
+  width: 100vw;       /* Ocupa 100% da largura da viewport */
+  display: flex;      /* Usa Flexbox para centralizar o conteúdo */
+  flex-direction: column; /* Conteúdo empilhado verticalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center;     /* Centraliza o conteúdo horizontalmente */
+
+  /* Estilos Visuais Retrowave */
+  background-color: var(--color-bg-deep-black); /* Cor de fundo de fallback (se o vídeo não carregar) */
+  color: var(--color-text-primary); /* Cor do texto padrão */
+  overflow: hidden; /* Importante para evitar barras de rolagem se o conteúdo ultrapassar a tela */
+  text-align: center; /* Centraliza o texto dentro do container */
+  padding-top: 60px; /* Espaço para a NavBar fixa no topo */
+  box-sizing: border-box; /* Garante que padding não adicione largura/altura extra */
+
+  /* Opcional: Gradiente sutil no fundo do container, acima do vídeo, para profundidade */
+  /* background-image: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.8), 
+    rgba(0,0,0,0.5), 
+    transparent
+  ); */
+}
+
+/* Estilos para o overlay de conteúdo que fica por cima do vídeo */
+.contentOverlay {
+  /* Posicionamento e Camada */
+  position: relative; /* Mantém o conteúdo no fluxo, mas com z-index controlável */
+  z-index: 10;        /* Garante que este conteúdo esteja ACIMA do vídeo (que tem z-index: -1) */
+
+  /* Layout e Aparência */
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente para legibilidade */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  max-width: 80%; /* Limita a largura máxima para melhor leitura */
+  box-sizing: border-box; /* Inclui padding na largura */
+
+  /* Efeito de brilho Retrowave na borda */
+  box-shadow: 0px 0px 15px var(--color-accent-cyan-electric), /* Brilho ciano */
+              0px 0px 30px var(--color-accent-pink-electric); /* Brilho rosa elétrico mais externo */
+
+  /* Gradiente na borda (se quiser bordas mais avançadas) */
+  border: 2px solid transparent;
+  border-image: linear-gradient(
+    to right, 
+    var(--color-accent-pink-electric), 
+    var(--color-accent-cyan-electric)
+  ) 1; /* '1' significa que o gradiente preenche toda a borda */
+}
+
+/* Estilos para o título principal dentro do contentOverlay */
+.mainTitle {
+  font-family: var(--font-title-retro-main); /* Fonte 'Press Start 2P' */
+  color: var(--color-accent-pink-electric); /* Rosa Elétrico */
+  font-size: 3.5em; /* Tamanho da fonte maior */
+  margin-bottom: 15px; /* Espaçamento inferior */
+  text-shadow: 
+    0 0 5px var(--color-accent-cyan-electric),   /* Brilho interno ciano */
+    0 0 10px var(--color-accent-cyan-electric), 
+    0 0 15px var(--color-accent-cyan-electric); /* Brilho externo ciano */
+  text-transform: uppercase; /* Maiúsculas para visual retrô */
+  line-height: 1.2; /* Altura da linha para melhor leitura */
+}
+
+/* Estilos para o subtítulo e parágrafos */
+.subText, .featuredSkin {
+  font-family: var(--font-body-retro); /* Fonte 'Oxanium' para o corpo */
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--color-text-primary); /* Branco/Cinza claro */
+}
+
+.featuredSkin {
+  font-size: 1.1em;
+  margin-top: 0;
+}
+
+/* Estilo específico para o texto neon dentro do featuredSkin */
+.neonText {
+  color: var(--color-accent-cyan-electric); /* Azul Elétrico */
+  text-shadow: 
+    0 0 7px var(--color-accent-cyan-electric),
+    0 0 10px var(--color-accent-cyan-electric),
+    0 0 20px var(--color-accent-pink-electric),
+    0 0 40px var(--color-accent-pink-electric); /* Brilho forte e multicamadas */
+}
+
+/* Media Queries para Responsividade (Opcional, mas recomendado para telas menores) */
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2.5em; /* Reduz o tamanho do título em telas pequenas */
+  }
+
+  .subText, .featuredSkin {
+    font-size: 1em; /* Reduz o tamanho do texto em telas pequenas */
+  }
+
+  .contentOverlay {
+    padding: 20px;
+    max-width: 95%; /* Aumenta a largura em telas pequenas */
+  }
+}
+
+.startButton {
+  /* Layout e Espaçamento */
+  padding: 15px 35px; /* Aumenta o padding para um botão mais robusto */
+  font-size: 1.4em; /* Fonte um pouco maior */
+  margin-top: 40px; /* Mais espaço do conteúdo acima */
+  cursor: pointer;   /* Indica que é clicável */
+  border: none;      /* Remove a borda padrão */
+  border-radius: 8px; /* Bordas levemente arredondadas */
+
+  /* Cores e Fontes Retrowave */
+  font-family: var(--font-body-retro); /* Fonte Oxanium para o corpo do botão */
+  text-transform: uppercase; /* Texto em maiúsculas */
+  font-weight: bold; /* Negrito */
+  color: var(--color-text-primary); /* Texto branco/claro */
+  background-image: var(--gradient-main); /* Gradiente principal (rosa para roxo) */
+  background-size: 200% auto; /* Para o efeito de hover com gradiente animado */
+
+  /* Efeitos Neon */
+  box-shadow: 
+    0 0 10px var(--color-accent-pink-electric), /* Brilho rosa */
+    0 0 20px var(--color-accent-cyan-electric); /* Brilho ciano */
+
+  /* Transições suaves para hover */
+  transition: 
+    background-position 0.5s ease-in-out, /* Anima o gradiente */
+    box-shadow 0.3s ease-in-out,           /* Anima a sombra/brilho */
+    transform 0.2s ease;                   /* Leve zoom */
+}
+
+/* Efeito de hover no botão */
+.startButton:hover {
+  background-position: right center; /* Move o gradiente no hover */
+  box-shadow: 
+    0 0 20px var(--color-accent-pink-electric), 
+    0 0 40px var(--color-accent-cyan-electric),
+    0 0 60px var(--color-accent-pink-electric); /* Brilho mais intenso */
+  transform: scale(1.05); /* Leve zoom no hover */
+}
+
+/* Opcional: Para telas menores */
+@media (max-width: 768px) {
+  .startButton {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-top: 25px;
+  }
+}

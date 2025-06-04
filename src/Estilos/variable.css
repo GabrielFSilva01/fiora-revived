@@ -1,0 +1,33 @@
+/* src/Estilos/_variables.css */
+
+/* Paleta de Cores Retrowave (Fiora Inspirada) */
+:root {
+  /* Fundos e Base */
+  --color-bg-deep-black: #1A1A1A;     /* Preto Profundo (para fundo principal e contraste) */
+  --color-bg-dark-purple: #8A2BE2;    /* Roxo Vibrante (para fundos ou detalhes) */
+
+  /* Acentos e Destaques Neon */
+  --color-accent-pink-electric: #FF00FF; /* Rosa Elétrico (destaque, texto) */
+  --color-accent-cyan-electric: #00FFFF; /* Azul Elétrico (sombra, gradientes) */
+  --color-accent-orange-sunset: #FF7F00; /* Laranja Pôr do Sol (gradientes, detalhes) */
+
+  /* Textos e Neutras */
+  --color-text-primary: #F0F0F0;       /* Branco/Cinza Claro (texto principal em fundos escuros) */
+  --color-text-secondary: #FFC0CB;     /* Um rosa mais suave para textos secundários ou brilhos sutis */
+
+  /* Fontes Retrowave */
+  --font-title-retro-main: 'Press Start 2P', cursive; 
+  --font-title-retro-secondary: 'Monoton', cursive;   
+  --font-body-retro: 'Oxanium', sans-serif;          
+  
+  --font-display-audiowide: 'Audiowide', sans-serif;
+  --font-display-orbitron: 'Orbitron', sans-serif;
+  --font-display-righteous: 'Righteous', sans-serif;
+  --font-display-michroma: 'Michroma', sans-serif;
+  --font-body-opensans: 'Open Sans', sans-serif; 
+  --font-body-roboto: 'Roboto', sans-serif;     
+
+  /* Opcional: Variáveis para gradientes comuns */
+  --gradient-main: linear-gradient(to right, var(--color-accent-pink-electric), var(--color-bg-dark-purple));
+  --gradient-accent: linear-gradient(to bottom, var(--color-accent-cyan-electric), var(--color-accent-orange-sunset));
+}

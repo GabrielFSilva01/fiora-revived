@@ -1,0 +1,39 @@
+/* src/Componentes/VideoPlayer/VideoPlayer.module.css */
+
+.videoPlayerContainer {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100vw;   
+  height: 100vh;  
+  z-index: 0;     /* <--- AJUSTE FINAL: UM Z-INDEX NEUTRO PARA FICAR ATRÁS DO CONTEÚDO */
+  pointer-events: none; /* Impede cliques no vídeo */
+  overflow: hidden; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0; /* Começa invisível (estado inicial) */
+  transition: opacity 1s ease-in-out; /* A transição está aqui */
+}
+
+/* Classe para quando o vídeo estiver visível */
+.videoPlayerVisible {
+  opacity: 1; /* Torna-o visível */
+  /* z-index permanece 0 ou o que for herdado */
+}
+
+/* Classe para quando o vídeo estiver escondido (redundante se base já tem opacity:0, mas pode ajudar na clareza) */
+.videoPlayerHidden {
+  opacity: 0; /* Garante que esteja invisível */
+}
+
+/* Alvo direto da tag <video> */
+.videoElement { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  filter: brightness(0.6) contrast(1.1); /* Escurece para o texto ser visível */
+  transform: scale(1.05); /* Leve zoom para evitar bordas pretas */
+}

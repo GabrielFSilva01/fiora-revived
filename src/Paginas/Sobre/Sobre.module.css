@@ -1,0 +1,136 @@
+/* src/Paginas/Sobre/Sobre.module.css */
+
+.sobreContainer {
+  /* Layout e Espaçamento */
+  padding: 80px 20px 20px; /* Padding no topo para a NavBar fixa */
+  min-height: 100vh;      /* Garante que a página ocupe pelo menos a altura da tela */
+  box-sizing: border-box; /* Inclui padding na altura */
+
+  /* Estilos Retrowave */
+  background-color: var(--color-bg-deep-black); /* Fundo preto profundo */
+  color: var(--color-text-primary); /* Texto principal claro */
+  font-family: var(--font-body-retro); /* Fonte do corpo Oxanium */
+  text-align: center; /* Centraliza o texto */
+  
+  /* Gradiente sutil no fundo (opcional, para um toque extra) */
+  background-image: linear-gradient(
+    to bottom, 
+    var(--color-bg-dark-purple) 0%, 
+    var(--color-bg-deep-black) 20%, 
+    var(--color-bg-deep-black) 80%,
+    var(--color-bg-dark-purple) 100%
+  );
+}
+
+.title {
+  font-family: var(--font-title-retro-main); /* Fonte Press Start 2P */
+  font-size: 2.5em;
+  color: var(--color-accent-pink-electric); /* Rosa Elétrico */
+  text-shadow: 
+    0 0 5px var(--color-accent-cyan-electric), 
+    0 0 10px var(--color-accent-cyan-electric);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-family: var(--font-title-retro-main); /* Press Start 2P */
+  font-size: 2em;
+  color: var(--color-accent-cyan-electric); /* Azul Elétrico */
+  text-shadow: 0 0 5px var(--color-accent-pink-electric);
+  margin-top: 40px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.abilitiesList {
+  list-style: none; /* Remove marcadores de lista */
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.abilityItem {
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para cada habilidade */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: left; /* Texto alinhado à esquerda dentro do item */
+  box-shadow: 0 0 8px var(--color-accent-cyan-electric); /* Brilho sutil */
+  transition: all 0.3s ease;
+}
+
+.abilityItem:hover {
+  box-shadow: 0 0 15px var(--color-accent-pink-electric), 0 0 25px var(--color-accent-cyan-electric); /* Brilho mais intenso no hover */
+  transform: translateY(-3px); /* Efeito de leve levantamento */
+}
+
+.abilityName {
+  color: var(--color-accent-orange-sunset); /* Laranja para o nome da habilidade */
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  text-shadow: 0 0 5px var(--color-accent-orange-sunset);
+}
+
+/* Estilo específico para a habilidade Ultimate (R) */
+.ultimateItem {
+  background-color: var(--color-bg-dark-purple); /* Fundo mais escuro/vibrante para a ultimate */
+  border: 2px solid var(--color-accent-pink-electric); /* Borda rosa elétrica */
+  box-shadow: 0 0 15px var(--color-accent-pink-electric), 0 0 30px var(--color-accent-cyan-electric); /* Brilho forte */
+  
+  /* --- MUDANÇAS AQUI PARA FAZER O BLOCO SER MAIOR E TER MAIS FOCO --- */
+  padding: 30px; /* Aumenta o padding interno para dar mais "ar" */
+  margin-top: 30px; /* Adiciona uma margem superior para separá-la das outras habilidades */
+  margin-bottom: 30px; /* Adiciona uma margem inferior */
+  min-height: 120px; /* Garante uma altura mínima para o bloco */
+  display: flex; /* Usa flexbox para centralizar o conteúdo dentro do bloco */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centraliza o texto dentro do item */
+  /* --- FIM DAS MUDANÇAS --- */
+  background-color: fuchsia !important; /* <--- APENAS PARA TESTE! COR CHOCANTE! */
+  border: 5px solid yellow !important;   /* <--- APENAS PARA TESTE! BORDA VÍVIDA! */
+  border-radius: 10px;
+}
+
+.ultimateName {
+  color: var(--color-accent-cyan-electric); /* Azul Elétrico para o nome da ultimate */
+  font-size: 1.8em; /* Aumenta ainda mais a fonte do nome */
+  text-shadow: 0 0 10px var(--color-accent-cyan-electric), 0 0 20px var(--color-accent-pink-electric);
+  margin-bottom: 10px; /* Espaçamento após o nome */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2em;
+  }
+  .subtitle {
+    font-size: 1.5em;
+  }
+  .paragraph {
+    font-size: 1em;
+  }
+  .abilityName {
+    font-size: 1.1em;
+  }
+  .ultimateName {
+    font-size: 1.5em; /* Ajusta o tamanho da fonte da ultimate para telas menores */
+  }
+  .ultimateItem {
+    padding: 20px; /* Reduz padding em telas menores */
+    min-height: 100px;
+  }
+}
